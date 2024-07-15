@@ -5,21 +5,20 @@ from tkinter import ttk
 window = tk.Tk()
 window.title("Age and BMI Calculator")
 window.geometry("600x400")
-window.resizable(False, False)  # Disable window resizing
-window.configure(bg='#f0f0f0')  # Set the background color to a light gray
+window.resizable(False, False) 
+window.configure(bg='#f0f0f0')  
 
-# Add some styling
+
 style = ttk.Style()
-style.theme_use('clam')  # Set the theme to 'clam'
-style.configure('TNotebook.Tab', background='#4285F4', foreground='white')  # Set the tab color to blue
-style.map('TNotebook.Tab', background=[('selected', '#2F6FED')])  # Set the selected tab color to a darker blue
-style.configure('TEntry', fieldbackground='#E8F0FE')  # Set the form field background color to a light blue
+style.theme_use('clam') 
+style.configure('TNotebook.Tab', background='#4285F4', foreground='white')  
+style.map('TNotebook.Tab', background=[('selected', '#2F6FED')])  
+style.configure('TEntry', fieldbackground='#E8F0FE')  
 
-# Create a notebook (tabbed interface)
+
 notebook = ttk.Notebook(window)
 notebook.pack(pady=10, expand=True)
 
-# Create the Age Calculator tab
 age_tab = ttk.Frame(notebook)
 notebook.add(age_tab, text='Age Calculator')
 
@@ -70,7 +69,6 @@ def get_age():
 calculate_age_button = ttk.Button(age_tab, text="Calculate Age", command=get_age)
 calculate_age_button.grid(row=5, column=0, columnspan=2, padx=10, pady=10)
 
-# Create the BMI Calculator tab
 bmi_tab = ttk.Frame(notebook)
 notebook.add(bmi_tab, text='BMI Calculator')
 
